@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bankist</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/White Icon.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/output.css" />
+  </head>
+  <body class="bg-offWhite h-[100vh] w-[100vw]">
+    <main id="app" class="w-full py-[20px] px-[40px]">
+      <header>
+        <nav class="container flex items-center justify-between max-w-full">
+          <div
+            id="welMessage"
+            class="text-DarkGray text-[1.2em] font-semibold capitalize"
+          >
+            Log in to get started
+          </div>
+          <div class="w-[50px] h-[50px]">
+            <img
+              src="./assets/images/Black Icon.png"
+              alt="Icon"
+              class="w-full h-full"
+            />
+          </div>
+          <div>
+            <form id="sign" class="flex items-center gap-3">
+              <input
+                type="text"
+                id="username"
+                placeholder="user"
+                class="w-[100px] transition-all duration-500 rounded-full bg-white p-[5px] text-center outline-0 font-semibold placeholder:text-gray-200 border-2 border-transparent"
+              />
+              <input
+                type="text"
+                id="pin"
+                placeholder="PIN"
+                maxlength="4"
+                class="w-[100px] transition-all duration-500 rounded-full bg-white p-[5px] text-center outline-0 font-semibold placeholder:text-gray-200 border-2 border-transparent"
+              />
+              <button class="border-0 p-[10px] text-[1em] text-center">
+                →
+              </button>
+            </form>
+          </div>
+        </nav>
+      </header>
+
+      <section id="main" class="p-[7%] opacity-0 transition-all duration-1000">
+        <div class="main--row">
+          <span class="font-semibold text-DarkGray">
+            <h3 class="text-[1.5em]">Current balance</h3>
+            <h5 id="date" class="text-gray-400 text-[0.7em]">
+              As of 17/02/2024, 16:57
+            </h5>
+          </span>
+          <h1
+            id="balance"
+            class="text-DarkGray font-semibold text-[2.2em] cursor-default"
+          ></h1>
+        </div>
+        <div class="main--row my-[30px] max-h-[50vh]">
+          <div
+            id="history"
+            class="h-[50vh] bg-white w-[40vw] rounded-xl shadow-lg py-[5px] overflow-y-scroll"
+          >
+            <ul id="list-history">
+              <li class="movements">
+                <div class="transfer deposit">8 deposit</div>
+                <div class="date">12/03/2020</div>
+                <div class="value">1300,00&nbsp;€</div>
+              </li>
+
+              <li class="movements">
+                <div class="transfer deposit">7 deposit</div>
+                <div class="date">08/03/2020</div>
+                <div class="value">79,97&nbsp;€</div>
+              </li>
+
+              <li class="movements">
+                <div class="transfer withdrawal">6 withdrawal</div>
+                <div class="date">23/12/2019</div>
+                <div class="value">-133,90&nbsp;€</div>
+              </li>
+
+              <li class="movements">
+                <div class="transfer withdrawal">5 withdrawal</div>
+                <div class="date">18/11/2019</div>
+                <div class="value">-642,21&nbsp;€</div>
+              </li>
+
+              <li class="movements">
+                <div class="transfer deposit">4 deposit</div>
+                <div class="date">12/07/2019</div>
+                <div class="value">25&nbsp;000,00&nbsp;€</div>
+              </li>
+
+              <li class="movements">
+                <div class="transfer withdrawal">3 withdrawal</div>
+                <div class="date">27/05/2019</div>
+                <div class="value">-306,50&nbsp;€</div>
+              </li>
+
+              <li class="movements">
+                <div class="transfer deposit">2 deposit</div>
+                <div class="date">01/04/2019</div>
+                <div class="value">455,23&nbsp;€</div>
+              </li>
+
+              <li class="movements">
+                <div class="transfer deposit">1 deposit</div>
+                <div class="date">28/01/2019</div>
+                <div class="value">200,00&nbsp;€</div>
+              </li>
+            </ul>
+          </div>
+          <div class="cards">
+            <div class="transfer-card" id="transfer">
+              <h1 class="text-[1.2em] font-semibold mb-[7px]">
+                Transfer money
+              </h1>
+              <form class="flex gap-4 my-auto">
+                <div class="flex flex-col text-center">
+                  <input
+                    type="text"
+                    class="bg-blurBg w-full py-[5px] px-[15px] rounded-xl"
+                    id="transferName"
+                  />
+                  <label
+                    for="transferName"
+                    class="mt-[7px] text-[0.8em] font-medium"
+                    >Transfer to</label
+                  >
+                </div>
+
+                <div class="flex flex-col text-center">
+                  <input
+                    type="text"
+                    class="bg-blurBg w-full py-[5px] px-[15px] rounded-xl"
+                    id="transferAmount"
+                  />
+                  <label
+                    for="transferAmount"
+                    class="mt-[7px] text-[0.8em] font-medium"
+                    >Amount</label
+                  >
+                </div>
+                <button class="h-[33px]">→</button>
+              </form>
+            </div>
+
+            <div class="loan-card" id="loan">
+              <h1 class="text-[1.2em] font-semibold mb-[7px]">Request loan</h1>
+              <form class="flex w-1/2 gap-4 my-auto">
+                <div class="flex flex-col text-center">
+                  <input
+                    type="text"
+                    class="bg-blurBg w-full py-[5px] px-[15px] rounded-xl"
+                    id="loanAmount"
+                  />
+                  <label
+                    for="loanAmount"
+                    class="mt-[7px] text-[0.8em] font-medium"
+                    >Amount</label
+                  >
+                </div>
+
+                <button class="h-[33px]">→</button>
+              </form>
+            </div>
+
+            <div class="close-card" id="close">
+              <h1 class="text-[1.2em] font-semibold mb-[7px]">Close account</h1>
+              <form class="flex gap-4 my-auto">
+                <div class="flex flex-col text-center">
+                  <input
+                    type="text"
+                    class="bg-blurBg w-full py-[5px] px-[15px] rounded-xl"
+                    id="closeUser"
+                  />
+                  <label
+                    for="closeUser"
+                    class="mt-[7px] text-[0.8em] font-medium"
+                    >Confirm user</label
+                  >
+                </div>
+
+                <div class="flex flex-col text-center">
+                  <input
+                    type="text"
+                    class="bg-blurBg w-full py-[5px] px-[15px] rounded-xl"
+                    id="closePin"
+                  />
+                  <label
+                    for="closePin"
+                    class="mt-[7px] text-[0.8em] font-medium"
+                    >Confirm pin</label
+                  >
+                </div>
+
+                <button class="h-[33px]">→</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="main--row">
+          <div class="flex items-center gap-3 uppercase">
+            <h1 class="mr-[10px] text-[15px]">
+              In<span id="in" class="text-greenDone text-[1.6em]"></span>
+            </h1>
+            <h1 class="mr-[10px] text-[15px]">
+              out<span id="out" class="text-warn text-[1.6em]"></span>
+            </h1>
+            <h1 class="mr-[10px] text-[15px]">
+              interest
+              <span id="interest" class="text-greenDone text-[1.6em]"></span>
+            </h1>
+            <button id="sort">↓ SORT</button>
+          </div>
+          <h3 class="text-DarkGray text-[0.9em]">
+            You will be logged out in
+            <span id="time" class="font-bold"></span>
+          </h3>
+        </div>
+      </section>
+    </main>
+    <footer class="text-center text-DarkGray font-semibold">
+      &copy;copyrights Idea for jonas schmedtmann (JS course) and Done by me
+      <a href="https://github.com/dola5xd" class="text-warn underline"
+        >Adel yasser 😎❤</a
+      >
+      <span class="block">✨try use user: dola and pin: 2005✨</span>
+    </footer>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
